@@ -7,3 +7,7 @@ RUN pip install -r requirements.txt
 RUN apt update
 RUN apt install tree
 COPY . /code/
+
+# Setup non-root user
+RUN useradd djangouser
+USER djangouser
